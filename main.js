@@ -12,9 +12,26 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
-
-  // Your code here
-
+  // Make sure word is trimmed and put to lowercase first
+  word = word.trim();
+  word = word.toLowerCase();
+  // Set your vowels array to compare to word
+  let vowels = ['a', 'e', 'i', 'o', 'u']
+  let wordArray = word.split('')
+  let finalArray = []
+  for (let index = 0; index < 2; index++) {
+    console.log(wordArray[index])
+    if(vowels.includes(wordArray[index])) {
+      console.log(index)
+      if(index === 0){
+        let theWord = word + 'yay'
+        finalArray.push(theWord)
+      }
+    }
+  }
+  const answer = finalArray.join(' ');
+  console.log(answer)
+  return answer
 }
 
 // the first function called in the program to get an input from the user
