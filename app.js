@@ -1,26 +1,26 @@
 // Build a program to find the length of the longest word in a string excluding punctuation and removing whitespace.
-const punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-function removePunctuation(string) {
-  return string
-    .split("")
-    .filter(function (letter) {
-      return punctuation.indexOf(letter) === -1;
-    })
-    .join("");
-}
+// const punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+// function removePunctuation(string) {
+//   return string
+//     .split("")
+//     .filter(function (letter) {
+//       return punctuation.indexOf(letter) === -1;
+//     })
+//     .join("");
+// }
 
-const findLongestWord = (myString) => {
-  myString = removePunctuation(myString)
-  let stringArray = myString.split(' ')
-  let longestWord = ""
-  for (let i = 0; i < stringArray.length; i++) {
-    if (stringArray[i].length > longestWord.length) {
-      longestWord = stringArray[i]
-    }
-  }
-  return [longestWord, longestWord.length]
-}
-console.log(findLongestWord("This is for your own personal journey...... May you have excellent navigation as a developer using your own compass.")) 
+// const findLongestWord = (myString) => {
+//   myString = removePunctuation(myString)
+//   let stringArray = myString.split(' ')
+//   let longestWord = ""
+//   for (let i = 0; i < stringArray.length; i++) {
+//     if (stringArray[i].length > longestWord.length) {
+//       longestWord = stringArray[i]
+//     }
+//   }
+//   return [longestWord, longestWord.length]
+// }
+// console.log(findLongestWord("This is for your own personal journey...... May you have excellent navigation as a developer using your own compass.")) 
 
 // const myString =
 //   "This is for your own personal journey. May you have excellent navigation as a developer using your own compass.";
