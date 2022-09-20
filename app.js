@@ -1,30 +1,52 @@
 // Build a program to find the length of the longest word in a string excluding punctuation and removing whitespace.
 
-// const punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-// function removePunctuation(string) {
-//   return string
-//     .split("")
-//     .filter(function (letter) {
-//       return punctuation.indexOf(letter) === -1;
-//     })
-//     .join("");
-// }
-// let newString = removePunctuation(myString);
-// console.log(newString);
+const myString =
+  "This is for your own personal journey. May you have excellent navigation as a developer using your own compass.";
+const punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+function removePunctuation(string) {
+  return string
+    .split("")
+    .filter(function (letter) {
+      return punctuation.indexOf(letter) === -1;
+    })
+    .join("");
+}
 
-const findLongestWord = (myString) => {
-  let stringArray = myString.split(' ')
-  let longestWord = 0
-  let answer
-  for (let i = 0; i < stringArray.length; i++) {
-    if (stringArray[i].length > longestWord) {
-      longestWord = stringArray[i].length
-      answer = stringArray[i]
+function findLongestWord(wordString) {
+  let longestWord = "a";
+  let wordArr = wordString.split(" ");
+  for (let i = 0; i < wordArr.length; i++) {
+    let chosenWord = wordArr[i];
+    // console.log(chosenWord); //
+    if (chosenWord.length > longestWord.length) {
+      longestWord = chosenWord.toString();
+      // console.log(longestWord);
     }
   }
-  return [answer, longestWord]
+  let finalString = longestWord.toString();
+  let finalNumber = longestWord.length;
+  console.log(
+    `The longest word is: [${finalString}] and the length of it is [${finalNumber}]`
+  );
+  return finalString, finalNumber;
 }
-console.log(findLongestWord("This is for your own personal journey. May you have excellent navigation as a developer using your own compass."))
+let newString = removePunctuation(myString);
+console.log(newString);
+findLongestWord(newString);
+
+// const findLongestWord = (myString) => {
+//   let stringArray = myString.split(' ')
+//   let longestWord = 0
+//   let answer
+//   for (let i = 0; i < stringArray.length; i++) {
+//     if (stringArray[i].length > longestWord) {
+//       longestWord = stringArray[i].length
+//       answer = stringArray[i]
+//     }
+//   }
+//   return [answer, longestWord]
+// }
+// console.log(findLongestWord("This is for your own personal journey. May you have excellent navigation as a developer using your own compass."))
 
 // const isUnique = (word) => {
 //     // console.log(`Original word: ${word}`)
