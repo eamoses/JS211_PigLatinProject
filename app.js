@@ -1,7 +1,4 @@
 // Build a program to find the length of the longest word in a string excluding punctuation and removing whitespace.
-
-const myString =
-  "This is for your own personal journey. May you have excellent navigation as a developer using your own compass.";
 const punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 function removePunctuation(string) {
   return string
@@ -12,27 +9,52 @@ function removePunctuation(string) {
     .join("");
 }
 
-function findLongestWord(wordString) {
-  let longestWord = "a";
-  let wordArr = wordString.split(" ");
-  for (let i = 0; i < wordArr.length; i++) {
-    let chosenWord = wordArr[i];
-    // console.log(chosenWord); //
-    if (chosenWord.length > longestWord.length) {
-      longestWord = chosenWord.toString();
-      // console.log(longestWord);
+const findLongestWord = (myString) => {
+  myString = removePunctuation(myString)
+  let stringArray = myString.split(' ')
+  let longestWord = ""
+  for (let i = 0; i < stringArray.length; i++) {
+    if (stringArray[i].length > longestWord.length) {
+      longestWord = stringArray[i]
     }
   }
-  let finalString = longestWord.toString();
-  let finalNumber = longestWord.length;
-  console.log(
-    `The longest word is: [${finalString}] and the length of it is [${finalNumber}]`
-  );
-  return finalString, finalNumber;
+  return [longestWord, longestWord.length]
 }
-let newString = removePunctuation(myString);
-console.log(newString);
-findLongestWord(newString);
+console.log(findLongestWord("This is for your own personal journey...... May you have excellent navigation as a developer using your own compass.")) 
+
+// const myString =
+//   "This is for your own personal journey. May you have excellent navigation as a developer using your own compass.";
+// const punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+// function removePunctuation(string) {
+//   return string
+//     .split("")
+//     .filter(function (letter) {
+//       return punctuation.indexOf(letter) === -1;
+//     })
+//     .join("");
+// }
+
+// function findLongestWord(wordString) {
+//   let longestWord = "a";
+//   let wordArr = wordString.split(" ");
+//   for (let i = 0; i < wordArr.length; i++) {
+//     let chosenWord = wordArr[i];
+//     // console.log(chosenWord); //
+//     if (chosenWord.length > longestWord.length) {
+//       longestWord = chosenWord.toString();
+//       // console.log(longestWord);
+//     }
+//   }
+//   let finalString = longestWord.toString();
+//   let finalNumber = longestWord.length;
+//   console.log(
+//     `The longest word is: [${finalString}] and the length of it is [${finalNumber}]`
+//   );
+//   return finalString, finalNumber;
+// }
+// let newString = removePunctuation(myString);
+// console.log(newString);
+// findLongestWord(newString);
 
 // const findLongestWord = (myString) => {
 //   let stringArray = myString.split(' ')
